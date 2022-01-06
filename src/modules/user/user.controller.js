@@ -2,7 +2,7 @@ const User = require("./user.model");
 const UserProfile = require("./user-profile.model");
 const { generateAccessToken } = require("./services/user.service");
 
-async function login (req, res) {
+async function login(req, res) {
     try {
         const { email, password } = req.body;
 
@@ -162,7 +162,7 @@ const deleteUser = async (req, res) => {
 
         await user.destroy();
 
-        res.sendStatus(200).send(user);
+        res.status(200).send(user);
     } catch (err) {
         console.log(err);
         res.status(500).send("Internal server error!");

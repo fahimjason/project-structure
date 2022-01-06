@@ -11,7 +11,7 @@ module.exports = async function () {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
 
-    app.set('port', process.env.PORT);
+    app.set('port', nodecache.getValue('PORT'));
 
     const globalConfig = config.getGlobalConfig();
 
