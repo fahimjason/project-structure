@@ -35,7 +35,7 @@ async function getUsers(req, res) {
             include: [
                 {
                     model: UserProfile,
-                    as: "user_profile",
+                    as: "user-profile",
                 },
             ],
         });
