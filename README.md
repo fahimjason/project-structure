@@ -33,9 +33,9 @@ $ npm start             # development build
 $ npm production        # production build
 $ npm test              # run unit tests
 $ npm sonarqube         # generate sonarqube analysis
-\
+
 Or
-\
+
 $ yarn install          # install dependencies
 $ yarn seed             # generate required database schemas
 $ yarn start            # development build
