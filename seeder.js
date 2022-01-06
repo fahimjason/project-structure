@@ -6,7 +6,6 @@ async function init() {
     await config.initEnvironmentVariables();
 
     const nodecache = require(path.join(process.cwd(), 'src/config/lib/nodecache'));
-
     const sequelize = require(path.join(process.cwd(), 'src/config/lib/sequelize'));
 
     await sequelize.query(`CREATE DATABASE IF NOT EXISTS ${nodecache.getValue('DB_NAME')}`);
@@ -46,14 +45,14 @@ async function init() {
                 });
             });
         });
-    }    
+    }
 
     function userUpdateSeeder(callback) {
         User.findOne({
             where: { email: 'habiburrahman3089@gmail.com' }
         }).then(admin => {
             UserProfile.findOne({ where: { title: 'System Admin' } }).then(sysAdminProfile => {
-                admin.update({ profile_id: sysAdminProfile.id }).then(function() {
+                admin.update({ profile_id: sysAdminProfile.id }).then(function () {
                     callback();
                 });
             });
